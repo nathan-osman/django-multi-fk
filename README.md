@@ -31,4 +31,11 @@ Once installed, simply add `multi_fk` to `INSTALLED_APPS` in `settings.py`:
         #...
         'multi_fk',
     ]
-    
+
+### How It Works
+
+The app uses some clever [monkey-patching](https://en.wikipedia.org/wiki/Monkey_patch) to modify the behavior of the admin site. There are two changes made:
+
+ - a `data-model` HTML5 attribute is added to `<select>` elements on the page to indicate which model is being displayed
+ - JavaScript on the page updates the `<select>` elements belonging to the same model when one is changed 
+
